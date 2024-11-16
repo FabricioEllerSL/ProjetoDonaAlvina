@@ -142,3 +142,12 @@ body{
 .venda-module a:hover{
     color: #cc9e9e;
 }
+
+.add-register-button{
+    background-color: #7c3e30;
+    color: #fff;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px 10px;
+    border-radius: 5px;
+}

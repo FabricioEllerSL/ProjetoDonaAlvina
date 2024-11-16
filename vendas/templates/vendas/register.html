@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Renderiza o formulário com campos como parágrafos -->
+    <button type="submit">Cadastrar Venda</button>
+</form>
+
+{% endblock content %}
