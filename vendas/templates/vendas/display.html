@@ -1,7 +1,20 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+<a href="{% url 'home:navigation_page' %}" class="return-btn">VOLTAR</a>
 <main class="display-vendas-main">
-    vendas aqui
+    <h2 style="font-family: Arial, Helvetica, sans-serif; margin-top: 20px; color: #7c3e30; font-size: 2.5rem;">Vendas</h2>
+    <div class="vendas-container">
+        {% if vendas %}
+            {% for venda in vendas %}
+                <div class="venda-module">
+                    <a href="#">
+                        {{ venda | default:"Nome não registrado" }}
+                    </a>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
 </main>
 {% endblock content %}

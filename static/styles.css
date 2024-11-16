@@ -7,6 +7,19 @@ body{
     background-color: #cbb28d;
 }
 
+.return-btn{
+    color: #7c3e30;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 15px;
+}
+
+.return-btn:hover{
+    color: #7a564d;
+}
+
 .main-navbar{
     background-color: #7c3e30;
     padding: 10px 10px;
@@ -91,4 +104,40 @@ body{
     color: #000;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
+}
+
+/* DISPLAY VENDAS PAGE STYLES */
+
+.display-vendas-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+}
+
+.vendas-container{
+    background-color: #fff;
+    width: 70%;
+    height: 450px;
+    margin-top: 20px;
+    border-radius: 30px;
+    padding: 20px 30px;
+}
+
+.venda-module{
+    background-color: #9c6c54;
+    border: 3px solid #573a2b;
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+
+.venda-module a{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.venda-module a:hover{
+    color: #cc9e9e;
 }
