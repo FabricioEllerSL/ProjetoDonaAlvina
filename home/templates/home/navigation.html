@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<a href="{% url 'home:landing_page' %}" class="return-btn">VOLTAR</a>
 <main class="navigation-main">
     <div class="module-container">
         <a href="{% url 'vendas:display_vendas' %}">Gerenciar Vendas</a>
