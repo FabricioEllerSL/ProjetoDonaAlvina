@@ -40,7 +40,7 @@ def update_venda(request, id):
 
     current_date = datetime.now().strftime("%d/%m/%Y")
 
-    venda = get_object_or_404(Venda, pk=id)
+    venda = get_object_or_404(Venda, id=id)
 
     if request.method == 'POST':
         form = VendaForm(request.POST, instance=venda)
@@ -57,3 +57,12 @@ def update_venda(request, id):
     }
 
     return render(request, 'vendas/register.html', context_)
+
+def delete_venda(request, id):
+
+    venda = get_object_or_404(Venda, id=id)
+
+    venda.delete()
+    return redirect('vendas:display_vendas')  # Redireciona para uma página de sucesso (defina a URL adequada)
+    
+    
