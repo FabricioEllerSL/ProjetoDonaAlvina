@@ -13,6 +13,7 @@
                     <a href="#">
                         {{ venda | default:"Nome não registrado" }}
                     </a>
+                    <a href="{% url 'vendas:update_venda' venda.id %}">Editar</a>
                 </div>
             {% endfor %}
         {% endif %}
