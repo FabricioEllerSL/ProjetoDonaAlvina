@@ -14,6 +14,7 @@
                         {{ venda | default:"Nome não registrado" }}
                     </a>
                     <a href="{% url 'vendas:update_venda' venda.id %}">Editar</a>
+                    <a href="{% url 'vendas:info_venda' venda.id %}">Visualizar</a>
                     <a href="{% url 'vendas:delete_venda' venda.id %}">Deletar</a>
                 </div>
             {% endfor %}

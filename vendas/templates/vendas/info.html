@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <p> {{ venda.nome_cliente }} </p>
+    <p> {{ venda.valor_un_kg }} </p>
+    <p> {{ venda.qtd_kgs }} </p>
+    <p> {{ venda.data_venda }} </p>
+    <p> {{ venda.descricao_venda }} </p>
+
+{% endblock content %}
