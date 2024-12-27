@@ -2,10 +2,18 @@ from django.shortcuts import get_object_or_404, render, redirect
 from datetime import datetime
 from .models import Venda
 from .forms import VendaForm
+from django.db.models import Q
 
 def display_vendas(request):
 
     vendas = Venda.objects.all()
+
+    search_query = request.GET.get('search', '')
+    if search_query:
+        vendas = vendas.filter(
+        Q(nome_cliente__istartswith=search_query) |
+        Q(data_venda__icontains=search_query)
+    )
 
     current_date = datetime.now().strftime("%d/%m/%Y")
 

@@ -269,3 +269,35 @@ body{
     text-decoration: none;
     cursor: pointer;
 }
+
+/* SEARCH FIELD  */
+
+.search-input{
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #7c3e30;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.search-input:focus {
+    border-color: #5a2d24;
+}
+
+.search-btn{
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #7c3e30;
+    border: 2px solid #7c3e30;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.search-btn:hover{
+    background-color: #5a2d24;
+    border-color: #5a2d24;
+}
