@@ -58,20 +58,6 @@ def update_venda(request, id):
 
     return render(request, 'vendas/register.html', context_)
 
-def info_venda(request, id):
-
-    current_date = datetime.now().strftime("%d/%m/%Y")
-
-
-    venda = get_object_or_404(Venda, id=id)
-
-    context_ = {
-        "current_date": current_date,
-        "venda": venda
-    }
-
-    return render(request, 'vendas/info.html', context_)
-
 
 def delete_venda(request, id):
 

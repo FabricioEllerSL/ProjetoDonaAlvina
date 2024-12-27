@@ -13,9 +13,17 @@
                     <a href="#">
                         {{ venda | default:"Nome não registrado" }}
                     </a>
-                    <a href="{% url 'vendas:update_venda' venda.id %}">Editar</a>
-                    <a href="{% url 'vendas:info_venda' venda.id %}">Visualizar</a>
-                    <a href="{% url 'vendas:delete_venda' venda.id %}">Deletar</a>
+                    <button onclick="abrirModal({{ venda.id }})">Ver Detalhes</button>
+                </div>
+                <div id="modalVenda{{ venda.id }}" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="fecharModal({{ venda.id }})">&times;</span> 
+                        <p><strong>Cliente:</strong> {{ venda.nome_cliente }}</p>
+                        <p><strong>Valor por kg:</strong> {{ venda.valor_un_kg }}</p>
+                        <p><strong>Quantidade:</strong> {{ venda.qtd_kgs }}</p>
+                        <p><strong>Data:</strong> {{ venda.data_venda }}</p>
+                        <p><strong>Descrição:</strong> {{ venda.descricao_venda }}</p>
+                    </div>
                 </div>
             {% endfor %}
         {% endif %}
