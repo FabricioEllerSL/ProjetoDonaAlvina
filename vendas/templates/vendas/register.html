@@ -3,10 +3,25 @@
 
 {% block content %}
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}  <!-- Renderiza o formulário com campos como parágrafos -->
-    <button type="submit">Salvar Venda</button>
-</form>
+
+<div class="register-container">
+    <form method="POST">
+        {% csrf_token %}
+        
+        <h2>Nome Cliente:</h2>
+        <p>{{ form.nome_cliente }}</p>
+        <h2>Valor Unit.(kg):</h2>
+        <p>{{ form.valor_un_kg }}</p>
+        <h2>Quantidade(kg):</h2>
+        <p>{{ form.qtd_kgs }}</p>
+        <h2>Descrição:</h2>
+        <p>{{ form.descricao_venda }}</p>
+
+        <div class="btn-wrapper">
+            <button type="submit" class="save-venda-btn">Salvar Venda</button>
+            <a href="{% url 'vendas:display_vendas' %}" class="cancel-venda-btn">Cancelar</a>
+        </div>
+    </form>
+</div>
 
 {% endblock content %}
