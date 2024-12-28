@@ -16,7 +16,7 @@ function fecharModal(id) {
     }
 }
 
-// Fecha a modal ao clicar fora dela
+
 window.onclick = function (event) {
     var modal = document.querySelectorAll(".modal");
     if (event.target == modal) {

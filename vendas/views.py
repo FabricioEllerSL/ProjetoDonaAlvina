@@ -31,9 +31,9 @@ def register_venda(request):
     if request.method == 'POST':
         form = VendaForm(request.POST)
         if form.is_valid():
-            # Salvar a instância no banco de dados
+
             form.save()
-            return redirect('vendas:display_vendas')  # Redireciona para uma página de sucesso (defina a URL adequada)
+            return redirect('vendas:display_vendas')
     
     form = VendaForm()
     
@@ -53,9 +53,9 @@ def update_venda(request, id):
     if request.method == 'POST':
         form = VendaForm(request.POST, instance=venda)
         if form.is_valid():
-            # Salvar a instância no banco de dados
+
             form.save()
-            return redirect('vendas:display_vendas')  # Redireciona para uma página de sucesso (defina a URL adequada)
+            return redirect('vendas:display_vendas')
     
     form = VendaForm(instance=venda)
     
@@ -72,6 +72,6 @@ def delete_venda(request, id):
     venda = get_object_or_404(Venda, id=id)
 
     venda.delete()
-    return redirect('vendas:display_vendas')  # Redireciona para uma página de sucesso (defina a URL adequada)
+    return redirect('vendas:display_vendas')
     
     
