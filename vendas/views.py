@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from datetime import datetime
 from .models import Venda
-from .forms import VendaForm
+from .forms import VendaForm, FiltroVendaForm
 from django.db.models import Q
 
 def display_vendas(request):
@@ -75,3 +75,25 @@ def delete_venda(request, id):
     return redirect('vendas:display_vendas')
     
     
+def display_relatorios(request):
+    vendas = Venda.objects.all() 
+    form = FiltroVendaForm(request.GET or None)
+
+    if form.is_valid():
+
+        data_inicial = form.cleaned_data.get('data_inicial')
+        data_final = form.cleaned_data.get('data_final')
+        metodo_pagamento = form.cleaned_data.get('metodo_pagamento')
+
+        if data_inicial:
+            vendas = vendas.filter(data_venda__gte=data_inicial)
+        if data_final:
+            data_final = datetime.combine(data_final, datetime.max.time())
+            vendas = vendas.filter(data_venda__lte=data_final)
+        if metodo_pagamento:
+            print(metodo_pagamento)
+            vendas = vendas.filter(metodo_pagamento=metodo_pagamento)
+
+        print(vendas[0] if vendas else 'vazio')
+
+    return render(request, 'vendas/relatorios.html', {'vendas': vendas, 'form': form})

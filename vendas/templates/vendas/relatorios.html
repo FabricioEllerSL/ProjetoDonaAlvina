@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Relatório de Vendas</h2>
+
+<form method="get" style="margin-bottom: 20px;">
+    {{ form.as_p }}
+    <button type="submit" style="padding: 10px 15px; background-color: #7c3e30; color: white; border: none; border-radius: 5px; cursor: pointer;">Filtrar</button>
+</form>
+
+<div class="relatorios-container">
+    {% for venda in vendas %}
+        <div class="venda-card">
+            <p><strong>Cliente:</strong> {{ venda.nome_cliente }}</p>
+            <p><strong>Data:</strong> {{ venda.data_venda|date:"d/m/Y" }}</p>
+            <p><strong>Método Pagamento:</strong> {{ venda.metodo_pagamento }}</p>
+            <p><strong>Valor Total:</strong> R$ {{ venda.valor_total }}</p>
+        </div>
+    {% empty %}
+        <p style="font-family: Arial, Helvetica, sans-serif; color: #7c3e30; font-size: 1.5rem; margin-top: 10px;">Nenhuma venda encontrada para os critérios selecionados.</p>
+    {% endfor %}
+</div>
+{% endblock %}

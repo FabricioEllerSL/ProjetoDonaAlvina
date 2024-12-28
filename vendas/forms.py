@@ -26,3 +26,8 @@ class VendaForm(forms.ModelForm):
             )
                 
         }
+
+class FiltroVendaForm(forms.Form):
+    data_inicial = forms.DateField(required=False, widget=forms.DateInput(attrs={'type': 'date'}))
+    data_final = forms.DateField(required=False, widget=forms.DateInput(attrs={'type': 'date'}))
+    metodo_pagamento = forms.ChoiceField(choices=[("", "Todos")] + choices.PAYMENT_METHODS, required=False)

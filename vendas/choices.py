@@ -1,4 +1,4 @@
 PAYMENT_METHODS = [
-    ('PIX', 'Pix'),
-    ('DINHEIRO', 'Dinheiro')
+    ('Pix', 'Pix'),
+    ('Dinheiro', 'Dinheiro')
     ]
