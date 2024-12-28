@@ -195,6 +195,19 @@ body{
     scale: 1.03;
 }
 
+.register-container .choice-field{
+    resize: none;
+    width: 100%;
+    border: 2px solid #7c3e30;
+    border-radius: 10px;
+    font-size: x-large;
+}
+.register-container .choice-field:hover{
+    border: 2px solid #7c3e30;
+    border-radius: 10px;
+    scale: 1.03;
+}
+
 .register-container .save-venda-btn{
     background-color: #7c3e30;
     border: none;

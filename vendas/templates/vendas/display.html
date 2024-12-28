@@ -23,6 +23,7 @@
                     <div class="modal-content">
                         <span class="close" onclick="fecharModal({{ venda.id }})">&times;</span> 
                         <p><strong>Cliente:</strong> {{ venda.nome_cliente }}</p>
+                        <p><strong>Método Pagamento:</strong> {{ venda.metodo_pagamento }}</p>
                         <p><strong>Valor por kg:</strong> {{ venda.valor_un_kg }}</p>
                         <p><strong>Quantidade:</strong> {{ venda.qtd_kgs }}</p>
                         <p><strong>Data:</strong> {{ venda.data_venda }}</p>
