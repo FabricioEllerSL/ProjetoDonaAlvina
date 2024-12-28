@@ -371,7 +371,7 @@ body{
     background-color: #5a2d24;
 }
 
-/* RELATORIOS MAIN PAGE */
+/* RELATORIOS PAGE */
 
 .relatorios-container{
     background-color: #fff;
@@ -389,3 +389,99 @@ body{
     margin: 20px 0;
 }
 
+.relatorio-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.relatorio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.relatorio-card p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.relatorio-card p strong {
+    color: #7c3e30;
+}
+
+.relatorio-card p:last-child {
+    font-weight: bold;
+    font-size: 16px;
+    color: #7c3e30;
+}
+
+
+.filter-form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    margin: 0 auto 20px; /* Centraliza horizontalmente e adiciona margem inferior */
+}
+
+.filter-form label {
+    font-size: 14px;
+    color: #7c3e30;
+    font-weight: bold;
+}
+
+.filter-form input,
+.filter-form select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.filter-form input:focus,
+.filter-form select:focus {
+    border-color: #7c3e30;
+    outline: none;
+}
+
+.filter-button {
+    padding: 0 20px;
+    height: 40px;
+    background-color: #7c3e30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+    background-color: #5b2b23;
+}
+
+.valor-total {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f9f9f9;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    background-color: #7c3e30;
+    width: 30%;
+    border-radius: 10px;
+}

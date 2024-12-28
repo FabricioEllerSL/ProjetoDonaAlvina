@@ -94,6 +94,16 @@ def display_relatorios(request):
             print(metodo_pagamento)
             vendas = vendas.filter(metodo_pagamento=metodo_pagamento)
 
-        print(vendas[0] if vendas else 'vazio')
+    somatorio_vendas = 0.0
 
-    return render(request, 'vendas/relatorios.html', {'vendas': vendas, 'form': form})
+    for venda in vendas:
+
+        somatorio_vendas += float(venda.valor_total)
+
+    context_ = {
+        'vendas': vendas,
+        'form': form,
+        'somatorio': f"{float(somatorio_vendas):,.2f}".replace(",", "X").replace(".", ",").replace("X", "."),
+    }
+
+    return render(request, 'vendas/relatorios.html', context=context_)
