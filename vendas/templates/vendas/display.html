@@ -26,7 +26,7 @@
                         <p class="modal-text"><strong>Método Pagamento:</strong> {{ venda.metodo_pagamento }}</p>
                         <p class="modal-text"><strong>Valor por kg:</strong> {{ venda.valor_un_kg }}</p>
                         <p class="modal-text"><strong>Quantidade:</strong> {{ venda.qtd_kgs }}</p>
-                        <p class="modal-text"><strong>Data:</strong> {{ venda.data_venda }}</p>
+                        <p class="modal-text"><strong>Data:</strong> {{ venda.data_venda|date:"d/m/Y" }}</p>
                         <p class="modal-text"><strong>Descrição:</strong> {{ venda.descricao_venda }}</p>
                         <p class="modal-text" style="margin-bottom: 20px;"><strong>Valor Total:</strong> {{ venda.valor_total }}</p>
                         <a class="modal-btn-edit" href="{% url 'vendas:update_venda' venda.id %}">Editar Venda</a>

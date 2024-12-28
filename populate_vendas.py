@@ -16,10 +16,11 @@ def populate_vendas(qtd):
     is_pix = 'Dinheiro'
     for _ in range(qtd):
         nome_cliente = fake.name() if randint(0, 1) else None
-        valor_un_kg = randint(10, 100)
-        qtd_kgs = Decimal(f"{uniform(1, 50):.2f}")
+        valor_un_kg = Decimal(f"{uniform(1, 50):.2f}")
+        qtd_kgs = randint(1, 20)
         descricao_venda = fake.sentence() if randint(0, 1) else None
         metodo_pagamento = is_pix
+        valor_total = valor_un_kg * qtd_kgs
 
         is_pix = 'Pix' if is_pix != "Pix" else 'Dinheiro'
 
@@ -29,7 +30,8 @@ def populate_vendas(qtd):
             valor_un_kg=valor_un_kg,
             qtd_kgs=qtd_kgs,
             descricao_venda=descricao_venda,
-            metodo_pagamento=metodo_pagamento
+            metodo_pagamento=metodo_pagamento,
+            valor_total=valor_total
         )
 
     print(f'{qtd} vendas foram adicionadas ao banco de dados.')
