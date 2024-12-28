@@ -3,7 +3,7 @@ from . import choices
 
 class Venda(models.Model):
     nome_cliente = models.CharField(max_length=50, blank=True, null=True)
-    valor_un_kg = models.IntegerField()
+    valor_un_kg = models.DecimalField(max_digits=8, decimal_places=2)
     qtd_kgs = models.DecimalField(max_digits=8, decimal_places=2)
     data_venda = models.DateTimeField(auto_now_add=True)
     descricao_venda = models.TextField(default="", blank=True, null=True)
