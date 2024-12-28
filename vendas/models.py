@@ -8,6 +8,7 @@ class Venda(models.Model):
     data_venda = models.DateTimeField(auto_now_add=True)
     descricao_venda = models.TextField(default="", blank=True, null=True)
     metodo_pagamento = models.CharField(max_length=10, default=choices.PAYMENT_METHODS[0][0], choices=choices.PAYMENT_METHODS)
+    valor_total = models.DecimalField(max_digits=10, decimal_places=2, default=0.0)
 
     def __str__(self):
         valor_total = self.valor_un_kg * self.qtd_kgs
