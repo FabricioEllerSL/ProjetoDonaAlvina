@@ -11,6 +11,5 @@ class Venda(models.Model):
     valor_total = models.DecimalField(max_digits=10, decimal_places=2, default=0.0)
 
     def __str__(self):
-        valor_total = self.valor_un_kg * self.qtd_kgs
         data_formatada = self.data_venda.strftime('%d/%m/%Y')
-        return f'Venda | Cliente: {self.nome_cliente if self.nome_cliente else 'Não Informado'}, Data: {data_formatada} Valor: R${str(valor_total).replace('.', ',')}'
+        return f'Venda | Cliente: {self.nome_cliente if self.nome_cliente else 'Não Informado'}, Data: {data_formatada}'
