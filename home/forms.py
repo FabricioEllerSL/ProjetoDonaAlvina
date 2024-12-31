@@ -4,9 +4,9 @@ class LoginForm(forms.Form):
     username = forms.CharField(
         label="Usuário",
         max_length=150,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite seu usuário'})
+        widget=forms.TextInput(attrs={'class': 'input-field', 'placeholder': 'Digite seu usuário'})
     )
     password = forms.CharField(
         label="Senha",
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Digite sua senha'})
+        widget=forms.PasswordInput(attrs={'class': 'input-field', 'placeholder': 'Digite sua senha'})
     )
