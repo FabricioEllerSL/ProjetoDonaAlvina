@@ -1,6 +1,7 @@
 from datetime import datetime
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import LoginForm
 
@@ -18,6 +19,7 @@ def landing_page(request):
 
     return render(request, 'home/landing.html', context_)
 
+@login_required(login_url='home:landing_page')
 def navigation_page(request):
     """
         This view returns the navigation page, where you can

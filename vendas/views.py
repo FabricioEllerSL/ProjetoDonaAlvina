@@ -3,7 +3,8 @@ from datetime import datetime
 from .models import Venda
 from .forms import VendaForm, FiltroVendaForm
 from django.db.models import Q
-
+from django.contrib.auth.decorators import login_required
+@login_required(login_url='home:landing_page')
 def display_vendas(request):
 
     vendas = Venda.objects.all()
@@ -23,7 +24,7 @@ def display_vendas(request):
     }
 
     return render(request, 'vendas/display.html', context_)
-
+@login_required(login_url='home:landing_page')
 def register_venda(request):
 
     current_date = datetime.now().strftime("%d/%m/%Y")
@@ -43,7 +44,7 @@ def register_venda(request):
     }
 
     return render(request, 'vendas/register.html', context_)
-
+@login_required(login_url='home:landing_page')
 def update_venda(request, id):
 
     current_date = datetime.now().strftime("%d/%m/%Y")
@@ -66,7 +67,7 @@ def update_venda(request, id):
 
     return render(request, 'vendas/register.html', context_)
 
-
+@login_required(login_url='home:landing_page')
 def delete_venda(request, id):
 
     venda = get_object_or_404(Venda, id=id)
@@ -74,7 +75,7 @@ def delete_venda(request, id):
     venda.delete()
     return redirect('vendas:display_vendas')
     
-    
+@login_required(login_url='home:landing_page')    
 def display_relatorios(request):
     vendas = Venda.objects.all() 
     form = FiltroVendaForm(request.GET or None)
